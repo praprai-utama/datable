@@ -1,0 +1,36 @@
+<h1>Listing products</h1>
+
+<table id="product">
+<thead>
+  <tr>
+    <th>Product code</th>
+    <th>Product name</th>
+    <th>Product line</th>
+    <th>Product scale</th>
+    <th>Vendor</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Value</th>
+  </tr>
+</thead>
+<tbody>
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.product_code %></td>
+    <td><%= product.product_name %></td>
+    <td><%= product.product_line %></td>
+    <td><%= product.product_scale %></td>
+    <td><%= product.vendor %></td>
+    <td><%= product.description %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.price %></td>
+    <td><%= product.quantity * product.price %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>
